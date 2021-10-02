@@ -1,0 +1,30 @@
+[
+  {
+    "id":1,
+    "name":"Gloden Knights",
+    "location":"Las Vegas",
+    "conference":"Western",
+    "division":"Pacific"
+  },
+  {
+    "id":2,
+    "name":"Bruins",
+    "location":"Boston",
+    "conference":"Eastern",
+    "division":"Atlantic"
+  },
+  {
+    "id":3,
+    "name":"Penguins",
+    "location":"Pittsburgh",
+    "conference":"Eastern",
+    "division":"Metropolitan"
+  },
+  {
+    "id":4,
+    "name":"Rangers",
+    "location":"New York",
+    "conference":"Eastern",
+    "division":"metropolitan"
+  }
+]

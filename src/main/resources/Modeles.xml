@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Modeles>
+    <Modele ID="1" Quantite="1000" Largeur="210" Hauteur="297"></Modele>
+    <Modele ID="2" Quantite="2000" Largeur="210" Hauteur="297"></Modele>
+    <Modele ID="3" Quantite="3000" Largeur="148" Hauteur="210"></Modele>
+    <Modele ID="4" Quantite="4000" Largeur="297" Hauteur="420"></Modele>
+</Modeles>
