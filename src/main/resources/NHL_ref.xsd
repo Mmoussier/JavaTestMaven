@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Elément racine -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+    <xsd:element name="Row">
+        <xsd:complexType>
+            <xsd:simpleContent>
+                <xsd:extension base="xsd:string">
+                    <xsd:attribute name="Type">
+                        <xsd:simpleType>
+                            <xsd:restriction base="xsd:string">
+                                <xsd:enumeration value="Forward"></xsd:enumeration>
+                                <xsd:enumeration value="Defense"></xsd:enumeration>
+                                <xsd:enumeration value="Goaltender"></xsd:enumeration>
+                            </xsd:restriction>
+                        </xsd:simpleType>
+                    </xsd:attribute>
+                    <xsd:attribute name="Players" type="xsd:IDREFS"></xsd:attribute> <!-- liste d'ID -->
+                </xsd:extension>
+            </xsd:simpleContent>
+        </xsd:complexType>                    
+    </xsd:element>
+
+    <xsd:element name="Division" >
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="Team">
+                    <xsd:complexType>
+                        <xsd:simpleContent>
+                            <xsd:extension base="xsd:string">
+                                <xsd:attribute name="ID" type="xsd:IDREF"></xsd:attribute>
+                            </xsd:extension>
+                        </xsd:simpleContent>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+            <xsd:attribute name="Name" type="xsd:string"></xsd:attribute>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Conference">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element ref="Division" minOccurs="2" maxOccurs="2"/>
+            </xsd:sequence>
+            <xsd:attribute name="Name" type="xsd:string"/>
+        </xsd:complexType>
+    </xsd:element>
+
+    <xsd:element name="Player">
+        <xsd:complexType>
+            <xsd:attribute name="Name" type="xsd:string" use="required"></xsd:attribute>
+            <xsd:attribute name="FirstName" type="xsd:string" use="required"></xsd:attribute>
+            <xsd:attribute name="Number" >
+                <xsd:simpleType>
+                    <xsd:restriction base="xsd:int">
+                        <xsd:minExclusive value="1"></xsd:minExclusive>
+                        <xsd:maxInclusive value="99"></xsd:maxInclusive>
+                    </xsd:restriction>
+                </xsd:simpleType>
+            </xsd:attribute>
+            <xsd:attribute name="ID" type="xsd:ID" use="required"></xsd:attribute> 
+        </xsd:complexType>                    
+    </xsd:element>
+
+    <xsd:element name="Coach">
+        <xsd:complexType>
+            <xsd:attribute name="Name" type="xsd:string" use="required"></xsd:attribute>
+            <xsd:attribute name="FirstName" type="xsd:string" use="required"></xsd:attribute>
+        </xsd:complexType>                    
+    </xsd:element>
+
+    <xsd:element name="NHL">
+        <xsd:complexType>
+            <xsd:all>
+                <xsd:element name="Teams">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="Team" minOccurs="0" maxOccurs="unbounded">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="StanleyCups" minOccurs="0" >
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element name="StanleyCup" type="xsd:int"  minOccurs="0" maxOccurs="2"></xsd:element>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>   
+                                        <xsd:element name="Players">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element ref="Player" minOccurs="0" maxOccurs="unbounded"/>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>           
+                                        <xsd:element name="Rows" minOccurs="0">
+                                            <xsd:complexType>
+                                                <xsd:sequence>
+                                                    <xsd:element ref="Row" minOccurs="1" maxOccurs="8"/>
+                                                </xsd:sequence>
+                                            </xsd:complexType>
+                                        </xsd:element>        
+                                        <xsd:element ref="Coach"></xsd:element>                  
+                                    </xsd:sequence>
+                                    <xsd:attribute name="Name" type="xsd:string" use="required"/>
+                                    <xsd:attribute name="City" type="xsd:string" use="required"/>
+                                    <xsd:attribute name="Creation" type="xsd:gYear"/>
+                                    <xsd:attribute name="ID" type="xsd:ID" use="required"></xsd:attribute>
+                                    <xsd:attribute name="WebSite" type="xsd:anyURI"></xsd:attribute>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>                    
+                <xsd:element name="Conferences">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element ref="Conference" minOccurs="2" maxOccurs="2"/>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+                <xsd:element name="Arbitrage" type="xsd:string"/>
+            </xsd:all>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
