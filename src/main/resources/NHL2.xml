@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<NHL> <!-- Ok avec NHL.xsd, NHL_ref.xsd, NHL_type.xsd -->
+    <Teams>
+        <Team Name="Golden Knights" City="Las Vegas" Creation="2017" ID="GoldenKnights" WebSite="https://www.nhl.com/goldenknights">
+            <StanleyCups/>
+            <Players>
+                <Player Name="Engelland" Number="5" ID="Engelland" FirstName="Derek"/>
+                <Player Name="Fleury" FirstName="Marc-André" Number="29" ID="Fleury"/>
+                <Player Name="Karlsson" FirstName="William" Number="71" ID="Karlsson"/>
+                <Player Name="Marchessault" FirstName="Jonathan" Number="81" ID="Marchessault"/>
+                <Player Name="Carrier" FirstName="William" ID="Carrier"/>
+                <Player Name="Eakin" Number="21" ID="Eakin" FirstName="Cody"/>
+            </Players>
+            <Rows>
+                <Row Type="Forward" Players="Marchessault Karlsson"/>
+                <Row Type="Forward" Players="Carrier"/>
+                <Row Type="Defense" Players="Engelland"/>
+                <Row Type="Goaltender" Players="Fleury"/>
+            </Rows>
+            <Coach Name="Gallant" FirstName="Gerard" />
+        </Team>
+        <Team Name="Rangers" City="New-York" ID="Rangers">
+            <Players>
+                <Player ID="Panarin" Name="Panarin" FirstName="Artemi" Number="10" />
+                <Player ID="Howden" Name="Howden" FirstName="Brett" Number="21" />
+            </Players>
+            <Coach Name="Quinn" FirstName="David" />
+        </Team>
+        <Team Name="Ducks" City="Anaheim" ID="Ducks">
+            <!-- Anaheim Ducks -->
+            <StanleyCups/>
+            <Players>
+                <Player ID="Sprong" Name="Sprong" FirstName="Daniel" />
+            </Players>
+            <Coach Name="Murray" FirstName="Robert" />
+        </Team>   
+        <Team Name="Canadians" City="Montreal" ID="Canadians">
+            <StanleyCups>
+                <StanleyCup>1986</StanleyCup>
+                <StanleyCup>1993</StanleyCup>
+            </StanleyCups>
+            <Players>
+                <Player ID="Price" Name="Price" FirstName="Carrey" />
+            </Players>
+            <Rows>
+                <Row/>
+            </Rows>
+            <Coach Name="Julien" FirstName="Claude" />
+        </Team>
+        <Team Name="Blues" City="St-Louis" ID="Blues">
+            <Players>
+                <Player ID="OReilly" Name="O'Reilly" FirstName="Ryan" />
+            </Players>
+            <Coach Name="Berube" FirstName="Craig" />
+        </Team>
+    </Teams>
+    <Conferences>
+        <Conference Name="Eastern">
+            <Division Name="Atlantic">
+                <Team ID="Canadians"/>
+            </Division>
+            <Division Name="Metropolitan">
+                <Team ID="Rangers"/>
+            </Division>
+        </Conference>
+        <Conference Name="Western">
+            <Division Name="Central">
+                <Team ID="Blues"/>
+            </Division>
+            <Division Name="Pacific">
+                <Team ID="GoldenKnights"/>
+            </Division>
+        </Conference>
+    </Conferences>
+    <Arbitrage>Toronto</Arbitrage>    
+</NHL>
