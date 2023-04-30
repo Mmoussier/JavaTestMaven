@@ -11,7 +11,7 @@ public class Team {
     private String division; // atlantic, metropolitan, central, pacific
 
     public Team() {
-        // test commit & push commentaire
+
     }
 
     public Team(int id, String name, String location, String conference, String division) {
