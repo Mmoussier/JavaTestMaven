@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- Création d'une commande par l'API REST, avec un produit personnalisé générant un devis -->
+<salesOrderRequest>
+    <customerReference>My customer reference</customerReference>
+    <customerRemark>My customer remark</customerRemark>
+<!--    <salesOrderHeader>-->
+<!--        <shopId>TEST</shopId>-->
+<!--        <contactEmail>morgann.moussier@epssw.com</contactEmail>-->
+<!--    </salesOrderHeader>-->
+    <salesOrderLines>
+        <salesOrderLine id="line1">
+<!--        <salesOrderLine class="SalesOrderLine" id="line1">-->
+            <!--
+            <product class="CustomProduct">
+                <parts>
+                    <part>
+                        <cover>false</cover>
+                        <numberOfPages>1</numberOfPages>
+                        <paper>
+                            <colour>
+                                <code>BLA</code>
+                            </colour>
+                            <paperFamily>
+                                <code>CBM2</code>
+                            </paperFamily>
+                            <weight>170</weight>
+                        </paper>
+                        <partType>
+                            <code>F2942</code>
+                            <height>420.0</height>
+                            <width>297.0</width>
+                        </partType>
+                        <printingColours>
+                            <code>Q0100</code>
+                        </printingColours>
+                    </part>
+                </parts>
+                <productType>
+                    <code>FAPI</code>
+                </productType>
+            </product>
+            -->
+            <orderQuantity>100</orderQuantity>
+<!--            <customerReference>My order line1 reference</customerReference>-->
+        </salesOrderLine>
+    </salesOrderLines>
+    <salesShippingLines>
+        <salesShippingLine salesOrderLineId="line1" >
+<!--            <deliveryAddress>-->
+<!--                <city>ORLEANS</city>-->
+<!--                <countryCode>FR</countryCode>-->
+<!--                <name>Morgann Moussier</name>-->
+<!--                <postalCode>45000</postalCode>-->
+<!--                <street>34B rue Saint-Marc</street>-->
+<!--                <contactId>0</contactId>-->
+<!--                <email>morgann.moussier@gmail.com</email>-->
+<!--                <phone>06 11 22 33 44</phone>-->
+<!--            </deliveryAddress>-->
+<!--            <salesShippingLineQuantities>-->
+<!--                <salesShippingLineQuantity salesOrderLineId="line1" quantity="100"></salesShippingLineQuantity>-->
+<!--            </salesShippingLineQuantities>-->
+            <deliveryDate>2023-09-21</deliveryDate>
+        </salesShippingLine>
+    </salesShippingLines>
+<!--    <invoiceAddress>-->
+<!--        <city>Paris</city>-->
+<!--        <countryCode>FR</countryCode>-->
+<!--        <name>eProductivity Software</name>-->
+<!--        <postalCode>75002</postalCode>-->
+<!--        <street>4 rue Marivaux</street>-->
+<!--        <contactId>0</contactId>-->
+<!--    </invoiceAddress>-->
+</salesOrderRequest>
